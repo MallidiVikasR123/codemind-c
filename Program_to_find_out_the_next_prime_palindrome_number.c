@@ -2,27 +2,22 @@
 
 int main(){
     
-    int n,i,temp,count=0,rem,rev=0;
+    int n,rev=0,r,t,i;
     scanf("%d",&n);
     while(1){
-        count=0;
         rev=0;
-        temp=++n;
-        for(i=1;i<=n;i++){ 
-            if(n%i==0){
-                count++;
-            }
+        t=++n;
+        while(t){
+            r=t%10;
+            rev=rev*10+r;
+            t/=10;
         }
-        if(count==2){
-            while(temp){
-                rem=temp%10;
-                rev=rev*10+rem;
-                temp/=10;
-            }
-        if(n==rev) break;
+        if(rev==n){
+            for(i=2;i<=n;i++) if(n%i==0) break;
+            if(i==n) break;
         }
     }
-    printf("%d",rev);
+    printf("%d",n);
     
     return 0;
 }
