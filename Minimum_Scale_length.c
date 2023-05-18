@@ -1,28 +1,22 @@
 #include<stdio.h>
 
-int main()
-{
-    int n,i,gcd;
+int main(){
+    
+    int n,i,min,c;
     scanf("%d",&n);
-    int arr[n];
-    for(i=0;i<n;i++)
-    {
-        scanf("%d",&arr[i]);
+    int a[n];
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+        if(i==0) min=a[0];
+        else if(a[i]<min) min=a[i];
     }
-    gcd=arr[0];
-    int j=1;
-    while(j<n)
-    {
-       if(arr[j]%gcd==0)
-       {
-           j++;
-       }
-       else
-       {
-           gcd=arr[j]%gcd;
-           i++;
-       }
+    while(1){
+        c=0;
+        for(i=0;i<n;i++) if(a[i]%min==0) c++;
+        if(c==n) break;
+        --min;
     }
-    printf("%d",gcd);
+    printf("%d",min);
+    
     return 0;
 }
