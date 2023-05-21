@@ -1,24 +1,36 @@
 #include<stdio.h>
-
-int main(){
-
-    int n,rem=0,count=0,pcount=0,tcount=0;
+void mega_prime(int n);
+int main()
+{
+    int n,rem,cnt=0,i,j;
     scanf("%d",&n);
-    for(int i=1;i<=n;i++){
-        if(n%i==0){
-            count++;
+    for(i=1;i<=n;i++)
+    {
+        if(n%i==0)
+        {
+            cnt++;
         }
     }
-    while(n>0){
-        rem=n%10;
-        n/=10; 
-        if(rem==2||rem==3||rem==5||rem==7){
-            pcount++;
-        }
-        tcount++;
-    }
-    if(count==2&&(pcount==tcount)) printf("Mega Prime");
+    if(cnt==2)mega_prime(n);
     else printf("Not Mega Prime");
-
-    return 0;
+}
+void mega_prime(int n)
+{
+ int x=n,rem,i,j,size=0,cnt,res=0;
+ while(x!=0)
+ {
+    size++;cnt=0;
+     rem=x%10;
+     for(i=1;i<=rem;i++)
+     {
+         if(rem%i==0){
+             cnt++;
+         }
+     }
+     if(cnt!=2) break;
+     res++;
+     x/=10;
+ }
+ if(size==res)printf("Mega Prime");
+ else printf("Not Mega Prime");
 }
