@@ -21,12 +21,8 @@ public:
             else break;
             i++;j--;
         }
-        int cnt=0;
-        for(int i=0;i<s.size();i++)
-        {
-            if(s[i]=='a' or s[i]=='b' or s[i]=='c') cnt++;
-        }
         cout<<s;
-        return cnt;
+        if(i>j) return 0;
+        return (j-i+1);
     }
 };
