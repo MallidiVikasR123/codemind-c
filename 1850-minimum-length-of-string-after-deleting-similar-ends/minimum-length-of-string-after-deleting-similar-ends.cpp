@@ -7,21 +7,14 @@ public:
             if(s[i]==s[j])
             {
                 char cij=s[i];
-                while(i<j and s[i]==cij){
-                    s[i]='1';
-                    i++;
-                }
+                while(i<j and s[i]==cij) i++;
                 i--;
-                while(i<j and s[j]==cij){
-                    s[j]='1';
-                    j--;
-                }
+                while(i<j and s[j]==cij)j--;
                 j++;
             }
             else break;
             i++;j--;
         }
-        cout<<s;
         if(i>j) return 0;
         return (j-i+1);
     }
