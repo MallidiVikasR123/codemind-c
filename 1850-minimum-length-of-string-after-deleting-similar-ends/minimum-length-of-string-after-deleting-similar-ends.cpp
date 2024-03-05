@@ -1,6 +1,7 @@
 class Solution {
 public:
     int minimumLength(string s) {
+        ios_base::sync_with_stdio(0);
         int i=0,j=s.size()-1;
         while(i<j)
         {
@@ -16,6 +17,7 @@ public:
             i++;j--;
         }
         if(i>j) return 0;
-        return (j-i+1);
+        int a=j-i+1;
+        return a;
     }
 };
