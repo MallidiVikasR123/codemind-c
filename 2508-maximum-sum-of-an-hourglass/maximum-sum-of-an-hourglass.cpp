@@ -1,6 +1,7 @@
 class Solution {
 public:
     int maxSum(vector<vector<int>>& grid) {
+        ios_base::sync_with_stdio(0);
         int maxx=INT_MIN;
         for(int i=0;i<grid.size()-2;i++)
         {
