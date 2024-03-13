@@ -1,7 +1,8 @@
 class Solution {
 public:
     int minSteps(string s, string t) {
-        vector<int>v(26),v1(26);
+        ios_base::sync_with_stdio(0);
+        vector<int>v(26);
         for(int i=0;i<s.size();i++)
         {
             v[s[i]-'a']+=1;
