@@ -4,7 +4,6 @@ public:
         unordered_map<int,int>m;
         for(int i=0;i<nums.size();i++) m[nums[i]]++;
         int cnt=0;
-        for(auto i:m) cout<<i.first<<"-"<<i.second<<endl;
         for(int i=0;i<nums.size();i++)
         {
             int a=k-nums[i];
@@ -28,3 +27,10 @@ public:
         return cnt;
     }
 };
+auto init = []() 
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    return 'c';
+}();
