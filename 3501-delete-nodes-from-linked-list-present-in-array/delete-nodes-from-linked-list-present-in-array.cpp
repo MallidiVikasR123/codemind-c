@@ -11,6 +11,7 @@
 class Solution {
 public:
     ListNode* modifiedList(vector<int>& nums, ListNode* head) {
+        ios_base::sync_with_stdio(0);
         unordered_map<int,int>m;
         for(int i=0;i<nums.size();i++) m[nums[i]]++;
         ListNode *prev=head, *curr=head;
