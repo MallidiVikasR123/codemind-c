@@ -13,7 +13,7 @@ public:
     ListNode* modifiedList(vector<int>& nums, ListNode* head) {
         unordered_map<int,int>m;
         for(int i=0;i<nums.size();i++) m[nums[i]]++;
-        ListNode *prev=head, *curr=head, *prev1=head;
+        ListNode *prev=head, *curr=head;
         head=NULL;
         while(curr!=NULL){
             if(m[curr->val]==1){
