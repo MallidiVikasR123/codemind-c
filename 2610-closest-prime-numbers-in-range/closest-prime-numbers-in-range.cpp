@@ -10,7 +10,9 @@ public:
     vector<int> closestPrimes(int left, int right) {
         vector<int>v={-1,-1};
         if(left==right) return v;
+        if(left<=1 and right>=3) return {2,3};
         int m = (right - left)+1,a,b,abool=0,bbool=0;
+        if(left%2==0) left++;
         while(left<=right){
             if(isPrime(left)){
                 if(abool==0){
@@ -31,7 +33,7 @@ public:
                 a=b;
                 bbool=0;
             }
-            left++;
+            left+=2;
         }
         return v;
     }
