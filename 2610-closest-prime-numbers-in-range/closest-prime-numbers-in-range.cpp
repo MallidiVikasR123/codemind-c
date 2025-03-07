@@ -10,7 +10,7 @@ public:
     vector<int> closestPrimes(int left, int right) {
         vector<int>v={-1,-1},primeList;
         for(int i=left;i<=right;i++) if(isPrime(i)) primeList.push_back(i);
-        if(primeList.size()<1) return v;
+        if(primeList.size()<=1) return v;
         int m = INT_MAX;
         for(int i=0;i<primeList.size()-1;i++){
             if(primeList[i+1]-primeList[i]<m){
