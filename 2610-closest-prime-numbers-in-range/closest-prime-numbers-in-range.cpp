@@ -8,16 +8,30 @@ public:
         return 1;
     }
     vector<int> closestPrimes(int left, int right) {
-        vector<int>v={-1,-1},primeList;
-        for(int i=left;i<=right;i++) if(isPrime(i)) primeList.push_back(i);
-        if(primeList.size()<=1) return v;
-        int m = INT_MAX;
-        for(int i=0;i<primeList.size()-1;i++){
-            if(primeList[i+1]-primeList[i]<m){
-                m = primeList[i+1]-primeList[i];
-                v[0]=primeList[i];
-                v[1]=primeList[i+1];
+        vector<int>v={-1,-1};
+        if(left==right) return v;
+        int m = (right - left)+1,a,b,abool=0,bbool=0;
+        while(left<=right){
+            if(isPrime(left)){
+                if(abool==0){
+                    a=left;
+                    abool=1;
+                }
+                else{
+                    b=left;
+                    bbool=1;
+                }
             }
+            if(abool and bbool){
+                if((b-a)<m){
+                    m = b-a;
+                    v[0]=a;
+                    v[1]=b;
+                }
+                a=b;
+                bbool=0;
+            }
+            left++;
         }
         return v;
     }
